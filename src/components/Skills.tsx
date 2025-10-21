@@ -1,46 +1,61 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code2, Database, Cloud, Wrench } from "lucide-react";
+import { Code2, Database, Cloud, Wrench, Layers } from "lucide-react";
 
 interface SkillCategory {
   title: string;
   icon: typeof Code2;
+  gradient: string;
   skills: string[];
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    title: ".NET Stack",
-    icon: Code2,
-    skills: [".NET Core", ".NET MVC", "C#", "WCF", "Entity Framework", "Azure Data Factory"]
+    title: ".NET Ecosystem",
+    icon: Layers,
+    gradient: "from-primary to-primary/70",
+    skills: [".NET Core", "C#", "Entity Framework", "WCF", "Azure Data Factory"]
   },
   {
-    title: "Angular Stack",
+    title: "Frontend Stack",
     icon: Code2,
+    gradient: "from-accent to-accent/70",
     skills: ["Angular", "TypeScript", "NgRx", "RxJS", "Jest", "Storybook"]
   },
   {
-    title: "Databases & Cloud",
+    title: "Data & Cloud",
     icon: Database,
-    skills: ["MSSQL", "PostgreSQL", "MySQL", "Azure", "Docker", "Kubernetes"]
+    gradient: "from-primary/80 to-accent/80",
+    skills: ["PostgreSQL", "MSSQL", "MySQL", "Azure", "Docker", "Kubernetes"]
   },
   {
-    title: "Tools & Methodologies",
+    title: "Tools & DevOps",
     icon: Wrench,
-    skills: ["GitHub", "Agile", "CI/CD", "Claude Code", "Cursor", "Power BI", "SSRS"]
+    gradient: "from-accent/80 to-primary/80",
+    skills: ["GitHub", "CI/CD", "Power BI", "SSRS", "Claude", "Cursor"]
   }
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 px-4 bg-secondary/20">
-      <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Technical Skills
+    <section id="skills" className="py-24 px-4 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/5 to-background" />
+      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      
+      <div className="container max-w-6xl mx-auto relative">
+        <div className="text-center mb-20 space-y-4 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
+            <Cloud className="h-4 w-4 text-accent" />
+            <span className="text-sm font-medium text-accent">Technical Expertise</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold">
+            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+              Skills
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Full-stack expertise across modern development technologies
+            Full-stack proficiency across modern development technologies
           </p>
         </div>
 
@@ -50,26 +65,28 @@ const Skills = () => {
             return (
               <Card 
                 key={index}
-                className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                className="group bg-card/60 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Icon className="h-5 w-5 text-primary" />
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${category.gradient} shadow-lg group-hover:scale-110 transition-transform`}>
+                      <Icon className="h-6 w-6 text-background" />
                     </div>
-                    {category.title}
+                    <span className="group-hover:text-primary transition-colors">
+                      {category.title}
+                    </span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2.5">
                     {category.skills.map((skill, i) => (
-                      <Badge 
-                        key={i} 
-                        variant="secondary"
-                        className="bg-secondary/70 hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all cursor-default"
+                      <div
+                        key={i}
+                        className="px-4 py-2 rounded-lg bg-secondary/50 border border-border/50 hover:border-primary/50 hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default text-sm font-medium"
                       >
                         {skill}
-                      </Badge>
+                      </div>
                     ))}
                   </div>
                 </CardContent>

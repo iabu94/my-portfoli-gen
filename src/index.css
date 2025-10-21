@@ -8,50 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
+    --background: 220 40% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 217 33% 14%;
+    --card: 220 35% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 217 33% 14%;
+    --popover: 220 35% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 92% 60%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 180 85% 55%;
+    --primary-foreground: 220 40% 8%;
 
-    --secondary: 217 33% 17%;
+    --secondary: 220 30% 16%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 262 83% 58%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 95% 60%;
+    --accent-foreground: 220 40% 8%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 217 92% 60%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 180 85% 55%;
 
     --radius: 0.75rem;
 
-    /* Custom portfolio colors */
-    --tech-gradient-start: 217 92% 60%;
-    --tech-gradient-end: 262 83% 58%;
-    --glass-bg: 217 33% 17%;
-    --glass-border: 217 33% 25%;
+    /* Custom portfolio tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(180 85% 55%), hsl(180 75% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 60%), hsl(15 90% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(180 85% 55% / 0.1), hsl(25 95% 60% / 0.1));
+    --shadow-glow: 0 0 60px -15px hsl(180 85% 55% / 0.5);
+    --shadow-accent-glow: 0 0 40px -10px hsl(25 95% 60% / 0.4);
 
-    --sidebar-background: 222 47% 11%;
+    --sidebar-background: 220 40% 8%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217 92% 60%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 217 33% 17%;
+    --sidebar-primary: 180 85% 55%;
+    --sidebar-primary-foreground: 220 40% 8%;
+    --sidebar-accent: 220 30% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 33% 20%;
-    --sidebar-ring: 217 92% 60%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 180 85% 55%;
   }
 }
 
