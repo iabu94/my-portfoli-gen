@@ -10,22 +10,22 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: ".NET Ecosystem",
+    title: ".NET & Node.js",
     icon: Layers,
     gradient: "from-primary to-primary/70",
-    skills: [".NET Core", "C#", "Entity Framework", "WCF", "Azure Data Factory"]
+    skills: [".NET Core", "C#", "Entity Framework", "NestJS", "Prisma", "Azure Data Factory"]
   },
   {
-    title: "Frontend Stack",
+    title: "Frontend & Mobile",
     icon: Code2,
     gradient: "from-accent to-accent/70",
-    skills: ["Angular", "TypeScript", "NgRx", "RxJS", "Jest", "Storybook"]
+    skills: ["Angular", "TypeScript", "NgRx", "RxJS", "Flutter", "Jest", "Storybook"]
   },
   {
     title: "Data & Cloud",
     icon: Database,
     gradient: "from-primary/80 to-accent/80",
-    skills: ["PostgreSQL", "MSSQL", "MySQL", "Azure", "Docker", "Kubernetes"]
+    skills: ["PostgreSQL", "MSSQL", "MySQL", "Prisma", "Azure", "Docker", "Kubernetes"]
   },
   {
     title: "Tools & DevOps",
